@@ -11,7 +11,7 @@ const Container: React.FC<Props> = ({ children, className }) => {
   return (
     <div
       className={cls(
-        'max-w-3xl px-10 py-0.5 m-auto h-full bg-teal-100 border border-solid rounded border-teal-400',
+        'max-w-3xl px-10 py-0.5 m-auto h-full bg-violet-100 border rounded',
         className,
       )}
     >
