@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 
 import Container from './../components/Container';
 import Header from './../components/Header';
-import '../styles/globals.css';
+import Footer from 'components/Footer';
 
 export const metadata: Metadata = {
   title: 'さびメモ',
@@ -21,6 +21,7 @@ export default function RootLayout() {
               <li>Tags</li>
             </ul>
           </Header>
+          <Footer />
         </Container>
       </body>
     </html>
