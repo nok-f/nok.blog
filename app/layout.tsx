@@ -21,10 +21,10 @@ export default function RootLayout({ children }: Props) {
       <body>
         <Container>
           <Header>
-            <ul className="flex flex-grow w-full flex-wrap gap-x-4 gap-y-2 mb-8">
+            <ul className="flex flex-grow w-full flex-wrap gap-x-4 gap-y-2 mb-8 font-mono font-bold">
               <li>Home</li>
-              <li>Blogs</li>
-              <li>Tags</li>
+              <li>Posts</li>
+              <li>Categories</li>
             </ul>
           </Header>
           {children}

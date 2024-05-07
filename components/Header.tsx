@@ -8,7 +8,7 @@ type Props = {
 };
 
 const Header: React.FC<Props> = ({ children, className }) => {
-  return <div className={cls('block p-2 font-mono font-bold', className)}>{children}</div>;
+  return <div className={cls('block p-2', className)}>{children}</div>;
 };
 
 export default Header;
