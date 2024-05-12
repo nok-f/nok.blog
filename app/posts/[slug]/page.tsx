@@ -3,7 +3,13 @@ import { allPosts } from 'contentlayer/generated';
 
 import Post from '../../../components/Post';
 
-const PostLayout = ({ params }: { params: { slug: string } }) => {
+type PathParams = {
+  params: {
+    slug: string;
+  };
+};
+
+const PostLayout = ({ params }: PathParams) => {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
 

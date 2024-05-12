@@ -1,7 +1,13 @@
 import React from 'react';
 import { allPosts } from 'contentlayer/generated';
 
-async function getCategories() {
+type PathParams = {
+  params: {
+    slug: string;
+  };
+};
+
+async function getCategories(): Promise<Record<string, number>> {
   const categories: Record<string, number> = {};
   allPosts.forEach((post) => {
     for (const category of post.categories) {
@@ -15,7 +21,7 @@ async function getCategories() {
   return categories;
 }
 
-async function CategoryLayout({ params }: { params: { slug: string } }) {
+async function CategoryLayout({ params }: PathParams) {
   const categories = await getCategories();
   if (!categories) throw new Error(`Category not found for slug: ${params.slug}`);
 

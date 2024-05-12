@@ -2,7 +2,7 @@ import React from 'react';
 
 const START_YEAR = 2024;
 
-const Footer: React.FC<{}> = () => {
+const Footer: React.FC = () => {
   const now = new Date().getFullYear();
   const year = START_YEAR === now ? START_YEAR : `${START_YEAR} - ${now}`;
 
