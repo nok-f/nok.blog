@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <>
       <h2 className="font-mono my-2 text-3xl font-bold">Welcome to nok.blog!</h2>
@@ -20,4 +20,6 @@ export default function Home() {
       </section>
     </>
   );
-}
+};
+
+export default Home;

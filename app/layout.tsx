@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { Metadata } from 'next';
 
 import Container from 'components/Container';
@@ -15,7 +15,7 @@ type Props = {
   children: ReactNode;
 };
 
-export default function RootLayout({ children }: Props) {
+const RootLayout: React.FC<Props> = ({ children }: Props) => {
   return (
     <html lang="jp">
       <body>
@@ -33,4 +33,6 @@ export default function RootLayout({ children }: Props) {
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
