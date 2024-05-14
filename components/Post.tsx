@@ -1,8 +1,6 @@
 import React from 'react';
 import Markdown from './Markdown';
 
-// import Markdown from './Markdown';
-
 type Props = {
   title: string;
   date: string;

@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 import { allPosts } from 'contentlayer/generated';
+import { notFound } from 'next/navigation';
 
 import Post from '../../../components/Post';
 
@@ -11,7 +12,7 @@ type PathParams = {
 
 const PostLayout = ({ params }: PathParams) => {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
+  if (!post) notFound();
 
   return (
     <div>
