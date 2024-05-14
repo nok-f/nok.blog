@@ -1,13 +1,8 @@
 import React from 'react';
+import { notFound } from 'next/navigation';
 import { allPosts } from 'contentlayer/generated';
 
 import InternalLink from 'components/InternalLink';
-
-type PathParams = {
-  params: {
-    slug: string;
-  };
-};
 
 async function getCategories(): Promise<Record<string, number>> {
   const categories: Record<string, number> = {};
@@ -23,9 +18,9 @@ async function getCategories(): Promise<Record<string, number>> {
   return categories;
 }
 
-async function CategoryLayout({ params }: PathParams) {
+async function CategoryLayout() {
   const categories = await getCategories();
-  if (!categories) throw new Error(`Category not found for slug: ${params.slug}`);
+  if (!categories) notFound();
 
   const rankedCategories = Object.keys(categories).sort((a, b) => {
     // @ts-ignore

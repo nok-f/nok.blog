@@ -11,7 +11,7 @@ type PathParams = {
 };
 
 const PostLayout = ({ params }: PathParams) => {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
+  const post = allPosts.find((post) => post.basename === params.slug);
   if (!post) notFound();
 
   return (

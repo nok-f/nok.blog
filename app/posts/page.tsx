@@ -13,7 +13,7 @@ const PostLayout: React.FC = () => {
         return (
           <div key={post.basename} className="mt-2 mb-12">
             {format(post.date, 'yy/MM/dd')}
-            <InternalLink href={`/posts/${post.title}`}>
+            <InternalLink href={`/posts/${post.basename}`}>
               <h2 className="mt-1 text-xl">{post.title}</h2>
             </InternalLink>
           </div>
