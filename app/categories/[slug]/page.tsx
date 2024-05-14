@@ -2,6 +2,8 @@ import React from 'react';
 import { format } from 'date-fns';
 import { allPosts } from 'contentlayer/generated';
 
+import InternalLink from 'components/InternalLink';
+
 type Post = {
   title: string;
   date: string;
@@ -48,7 +50,9 @@ async function CategoryLayout(params: PathParams) {
         return (
           <div key={post.basename} className="mt-2 mb-12">
             {post.date}
-            <h2 className="mt-1 text-xl">{post.title}</h2>
+            <InternalLink href={`/posts/${post.title}`}>
+              <h2 className="mt-1 text-xl">{post.title}</h2>
+            </InternalLink>
           </div>
         );
       })}

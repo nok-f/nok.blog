@@ -1,6 +1,8 @@
 import React from 'react';
 import { allPosts } from 'contentlayer/generated';
 
+import InternalLink from 'components/InternalLink';
+
 type PathParams = {
   params: {
     slug: string;
@@ -42,7 +44,9 @@ async function CategoryLayout({ params }: PathParams) {
         {rankedCategories.map((category) => (
           <li key={category} className="my-2">
             <h2 className="mt-1">
-              {category}({categories[category]})
+              <InternalLink href={`/categories/${category}`}>
+                {category}({categories[category]})
+              </InternalLink>
             </h2>
           </li>
         ))}

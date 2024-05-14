@@ -1,5 +1,6 @@
 import React from 'react';
 import Markdown from './Markdown';
+import InternalLink from './InternalLink';
 
 type Props = {
   title: string;
@@ -18,7 +19,9 @@ const Post: React.FC<Props> = ({ title, date, categories, content }) => {
         カテゴリー：
         <ul className="ml-2">
           {categories.map((category) => (
-            <li key={category}>{category}</li>
+            <li key={category}>
+              <InternalLink href={`/categories/${category}`}>{category}</InternalLink>
+            </li>
           ))}
         </ul>
       </div>
